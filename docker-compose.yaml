@@ -1,0 +1,19 @@
+version: "3.0"
+
+networks:
+  verdaccio_network:
+
+
+services:
+  verdaccio_service:
+    container_name: verdaccio_container
+    image: verdaccio/verdaccio:5
+    restart: always
+    ports:
+      - 4873:4873
+    user: root
+    volumes:
+      - ./data/storage:/verdaccio/storage
+      - ./data/plugins:/verdaccio/plugins
+    networks:
+      - verdaccio_network
