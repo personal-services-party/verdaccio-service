@@ -13,6 +13,7 @@ services:
       - 4873:4873
     user: root
     volumes:
+      - ./configs/:/verdaccio/conf
       - ./data/storage:/verdaccio/storage
       - ./data/plugins:/verdaccio/plugins
     networks:
