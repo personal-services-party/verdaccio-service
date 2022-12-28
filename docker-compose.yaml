@@ -14,6 +14,7 @@ services:
     user: root
     volumes:
       - ./configs/:/verdaccio/conf
+      - ./etc/localtime:/etc/localtime
       - ./data/storage:/verdaccio/storage
       - ./data/plugins:/verdaccio/plugins
     networks:
