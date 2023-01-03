@@ -9,36 +9,34 @@
 #
 # Look here for more config file examples:
 # https://github.com/verdaccio/verdaccio/tree/5.x/conf
-#
+
 # Read about the best practices
 # https://verdaccio.org/docs/best
-
-listen: http://npm.sudosolo.info/
+listen: 0.0.0.0:4873
 # path to a directory with all packages
 storage: /verdaccio/storage/data
 # path to a directory with plugins to include
 plugins: /verdaccio/plugins
-
 # https://verdaccio.org/docs/webui
 web:
   title: shicheng.yu-private-npm
   # comment out to disable gravatar support
-  # gravatar: false
+  gravatar: false
   # by default packages are ordercer ascendant (asc|desc)
-  # sort_packages: asc
+  sort_packages: asc
   # convert your UI to the dark side
   # darkMode: true
-  # html_cache: true
+  html_cache: true
   # by default all features are displayed
-  # login: true
-  # showInfo: true
-  # showSettings: true
+  login: true
+  showInfo: true
+  showSettings: true
   # In combination with darkMode you can force specific theme
-  # showThemeSwitch: true
-  # showFooter: true
-  # showSearch: true
-  # showRaw: true
-  # showDownloadTarball: true
+  showThemeSwitch: true
+  showFooter: true
+  showSearch: true
+  showRaw: true
+  showDownloadTarball: true
   #  HTML tags injected after manifest <scripts/>
   # scriptsBodyAfter:
   #    - '<script type="text/javascript" src="https://my.company.com/customJS.min.js"></script>'
@@ -70,6 +68,7 @@ auth:
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
+    maxage: 100y
 
 # Learn how to protect your packages
 # https://verdaccio.org/docs/protect-your-dependencies/
@@ -152,13 +151,13 @@ server:
 # max_body_size: 10mb
 
 # https://verdaccio.org/docs/configuration#listen-port
-# listen:
-# - localhost:4873            # default value
-# - http://localhost:4873     # same thing
-# - 0.0.0.0:4873              # listen on all addresses (INADDR_ANY)
-# - https://example.org:4873  # if you want to use https
-# - "[::1]:4873"                # ipv6
-# - unix:/tmp/verdaccio.sock    # unix socket
+#listen:
+# - localhost:4873                       # default value
+# - http://localhost:4873                # same thing
+# - 0.0.0.0:4873                         # listen on all addresses (INADDR_ANY)
+#- https://npm.sudosolo.info:4873/      # if you want to use https
+# "[::1]:4873"                           # ipv6
+# - unix:/tmp/verdaccio.sock            # unix socket
 
 # The HTTPS configuration is useful if you do not consider use a HTTP Proxy
 # https://verdaccio.org/docs/configuration#https
